@@ -1,0 +1,29 @@
+<section class="juego">
+  <div class="wrapper">
+    <mat-drawer-container>
+      <mat-drawer #drawer mode='over' position="start">
+        <app-left-sidebar (cerrar)="drawer.toggle()"></app-left-sidebar>
+      </mat-drawer>
+      <app-header-app (drawer)="drawer.toggle()"></app-header-app>
+      <!-- Sección del body donde se muestra todo el contenido -->
+      <div class="body-home">
+        <!-- Sección del juego -->
+        <div class="section-juego">
+          <div class="juego-moto">
+              <img src="/assets/images/juego-moto-img.png" class="juego-img">
+          </div>
+        </div>
+        <!-- Button -->
+        <div class="d-flex flex-direction-row justify-content-center w-100 mt-3 mb-3">
+          <button mat-flat-button color="warn" class="btn-ver-puntaje" (click)="verPuntaje()" [disabled]="isLoading">
+            <span class="text-btn" *ngIf="!isLoading">VER PUNTAJE</span>
+          </button>
+        </div>
+        <!-- Footer -->
+        <div class="footer">
+          <app-footer-app></app-footer-app>
+        </div>
+      </div>
+    </mat-drawer-container>
+  </div>
+</section>
